@@ -1,7 +1,8 @@
 """
-AgroBiometrix USAID DIV Post-Award Master Operational Playbook Generator
+AgroBiometrix USAID DIV Post-Award Master Operational Playbook Generator (Expanded Edition)
 Generates a comprehensive, publication-grade executive technical roadmap (PDF)
-detailing the exact start-to-finish execution of the USAID DIV Stage 1 Award ($150,000 / 24 Months).
+detailing the exact start-to-finish execution of the USAID DIV Stage 1 Award ($150,000 / 24 Months),
+now including the exhaustive Step-by-Step SAM.gov & NCAGE Registration Guide for Nigerian Organizations.
 """
 
 import os
@@ -44,14 +45,14 @@ class NumberedCanvas(canvas.Canvas):
     def draw_header_footer(self, page_count):
         self.saveState()
         self.setFont("Helvetica-Bold", 8)
-        self.setFillColor(colors.HexColor("#0D47A1"))  # USAID Blue tone
+        self.setFillColor(colors.HexColor("#0D47A1"))  # USAID Blue
         
         # Header (pages > 1)
         if self._pageNumber > 1:
             self.drawString(54, 755, "USAID DIV STAGE 1 POST-AWARD MASTER OPERATIONAL PLAYBOOK")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#555555"))
-            self.drawRightString(558, 755, "AgroBiometrix Consortium • $150,000 Implementation Roadmap")
+            self.drawRightString(558, 755, "AgroBiometrix Consortium • $150,000 Implementation & SAM.gov Guide")
             self.setStrokeColor(colors.HexColor("#90CAF9"))
             self.setLineWidth(0.7)
             self.line(54, 748, 558, 748)
@@ -105,40 +106,40 @@ def build_pdf():
         'DocTitle',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=15,
-        leading=19,
+        fontSize=14.5,
+        leading=18.5,
         textColor=usaid_blue,
-        spaceAfter=6
+        spaceAfter=5
     )
 
     subtitle_style = ParagraphStyle(
         'Subtitle',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=9.5,
-        leading=13.5,
+        fontSize=9.2,
+        leading=13.0,
         textColor=forest_green,
-        spaceAfter=4
+        spaceAfter=3
     )
 
     meta_style = ParagraphStyle(
         'MetaStyle',
         parent=styles['Normal'],
         fontName='Helvetica-Oblique',
-        fontSize=8,
-        leading=11,
+        fontSize=7.8,
+        leading=10.5,
         textColor=text_muted,
-        spaceAfter=8
+        spaceAfter=6
     )
 
     h1_style = ParagraphStyle(
         'Heading1_Custom',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=11,
-        leading=14,
+        fontSize=10.5,
+        leading=13.5,
         textColor=usaid_blue,
-        spaceBefore=10,
+        spaceBefore=9,
         spaceAfter=4,
         keepWithNext=True
     )
@@ -147,10 +148,10 @@ def build_pdf():
         'Heading2_Custom',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=9.5,
-        leading=12.5,
+        fontSize=9.0,
+        leading=12.0,
         textColor=forest_green,
-        spaceBefore=7,
+        spaceBefore=6,
         spaceAfter=3,
         keepWithNext=True
     )
@@ -159,18 +160,18 @@ def build_pdf():
         'Body_Custom',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=8.0,
-        leading=11.2,
+        fontSize=7.8,
+        leading=11.0,
         textColor=text_dark,
-        spaceAfter=4
+        spaceAfter=3.5
     )
 
     bullet_style = ParagraphStyle(
         'Bullet_Custom',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=8.0,
-        leading=11.0,
+        fontSize=7.8,
+        leading=10.8,
         textColor=text_dark,
         leftIndent=12,
         firstLineIndent=-8,
@@ -181,8 +182,8 @@ def build_pdf():
         'TableCell',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=7.2,
-        leading=9.5,
+        fontSize=7.0,
+        leading=9.2,
         textColor=text_dark
     )
 
@@ -190,8 +191,8 @@ def build_pdf():
         'TableHeader',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=7.6,
-        leading=10,
+        fontSize=7.4,
+        leading=9.5,
         textColor=colors.white
     )
 
@@ -199,14 +200,14 @@ def build_pdf():
         'CalloutText',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=7.8,
-        leading=10.8,
+        fontSize=7.6,
+        leading=10.5,
         textColor=colors.HexColor("#0D3311")
     )
 
     def make_callout(title, body_text, bg_color=pale_green_bg, border_color=forest_green):
         content = [
-            Paragraph(f"<b>{title}</b>", ParagraphStyle('CalloutT', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=8.2, leading=10.5, textColor=border_color)),
+            Paragraph(f"<b>{title}</b>", ParagraphStyle('CalloutT', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=8.0, leading=10.2, textColor=border_color)),
             Spacer(1, 2),
             Paragraph(body_text, callout_text_style)
         ]
@@ -214,9 +215,9 @@ def build_pdf():
         t.setStyle(TableStyle([
             ('BACKGROUND', (0, 0), (-1, -1), bg_color),
             ('BOX', (0, 0), (-1, -1), 0.8, border_color),
-            ('PADDING', (0, 0), (-1, -1), 5),
-            ('TOPPADDING', (0, 0), (-1, -1), 4),
-            ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
+            ('PADDING', (0, 0), (-1, -1), 4.5),
+            ('TOPPADDING', (0, 0), (-1, -1), 3.5),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 3.5),
         ]))
         return t
 
@@ -226,31 +227,31 @@ def build_pdf():
     # HEADER BANNER & METADATA
     # -------------------------------------------------------------
     story.append(Paragraph("USAID DEVELOPMENT INNOVATION VENTURES (DIV) • POST-AWARD IMPLEMENTATION DIRECTIVE", header_stamp_style))
-    story.append(HRFlowable(width="100%", thickness=1.5, color=usaid_blue, spaceAfter=6, spaceBefore=2))
+    story.append(HRFlowable(width="100%", thickness=1.5, color=usaid_blue, spaceAfter=5, spaceBefore=2))
     
     story.append(Paragraph("What to Do When You Win the USAID DIV Fund: The Complete Technical, Financial, and Operational Roadmap (Start-to-Finish)", doc_title_style))
     story.append(Paragraph("<b>AgroBiometrix Implementation Protocol:</b> A 24-Month Master Execution Plan from Award Negotiation to DIV Stage 2 ($1.5M) Scale-Up", subtitle_style))
     
     meta_info = (
-        "<b>Award Mechanism</b>: USAID DIV Stage 1 Proof of Concept ($150,000 / 24 Months) • <b>Target Beneficiaries</b>: 10,000+ Smallholders<br/>"
+        "<b>Award Mechanism</b>: USAID DIV Stage 1 Proof of Concept ($150,000 / 24 Months) • <b>Target Reach</b>: 10,000+ Smallholders<br/>"
         "<b>Lead Implementing Organization</b>: AgroBiometrix Engineering Unit / Naysa-84 Labs in consortium with FUNAAB, OOU, FPI, and UGA<br/>"
-        "<b>Principal Investigator / Project Director</b>: Dr. Young Imienwain Irivboje (FUNAAB / Naysa-84)"
+        "<b>Principal Investigator / Project Director</b>: Dr. Young Imienwain Irivboje (FUNAAB / Naysa-84 Labs)"
     )
     story.append(Paragraph(meta_info, meta_style))
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 3))
 
     # -------------------------------------------------------------
     # EXECUTIVE SUMMARY CALLOUT
     # -------------------------------------------------------------
     callout_summary = (
         "<b>The Fundamental Philosophy of USAID DIV:</b> Winning a USAID DIV grant is fundamentally different from receiving traditional donor aid or charity. "
-        "DIV operates as an <b>evidence-driven venture fund</b> within the US Government. USAID is investing $150,000 into AgroBiometrix to answer one critical question: "
+        "DIV operates as an <b>evidence-driven venture fund</b> within the US Government. USAID is investing $150,000 into AgroBiometrix to answer one decisive question: "
         "<i>'Can an Africa-first, sovereign biometrical operating system with last-mile vernacular voice dissemination produce statistically verified yield and revenue gains among smallholders at a dramatically lower unit cost than traditional extension?'</i><br/>"
         "If you prove this with gold-standard causal evidence (Difference-in-Differences), rigorous unit economics ($0.02 radio / $0.20 voice robocall), and operational fidelity, "
-        "AgroBiometrix unlocks the gateway to <b>USAID DIV Stage 2 ($1,500,000)</b> and nationwide government adoption. This document defines your exact roadmap from Day 1 to Month 24."
+        "AgroBiometrix unlocks the gateway to <b>USAID DIV Stage 2 ($1,500,000)</b> and nationwide government adoption. This master playbook defines your exact roadmap from Day 1 to Month 24."
     )
     story.append(make_callout("EXECUTIVE MANDATE: TURNING $150K SEED EVIDENCE INTO A $1.5M SCALING ENGINE", callout_summary, pale_blue_bg, usaid_blue))
-    story.append(Spacer(1, 8))
+    story.append(Spacer(1, 6))
 
     # -------------------------------------------------------------
     # SECTION 1: PRE-AWARD DUE DILIGENCE & NEGOTIATION
@@ -262,10 +263,70 @@ def build_pdf():
     ))
     story.append(Paragraph("<b>Key Action Items & Requirements:</b>", h2_style))
     story.append(Paragraph("• <b>SAM.gov & Unique Entity Identifier (UEI) Validation</b>: Ensure active registration on the US Government System for Award Management (SAM.gov). Naysa-84 / AgroBiometrix must maintain valid NCAGE and UEI codes.", bullet_style))
-    story.append(Paragraph("• <b>Non-US Organization Pre-Award Survey (NUPAS) / Financial Risk Review</b>: USAID will evaluate your internal financial management, segregation of duties, procurement policies, and anti-fraud protocols.", bullet_style))
+    story.append(Paragraph("• <b>Non-US Organization Pre-Award Survey (NUPAS) / Financial Risk Review</b>: USAID evaluates internal financial management, segregation of duties, procurement policies, and anti-fraud protocols.", bullet_style))
     story.append(Paragraph("• <b>Award Mechanism Selection (Fixed Amount Award vs. Cooperative Agreement)</b>: Stage 1 DIV awards are predominantly structured as <b>Fixed Amount Awards (FAAs)</b>. Under an FAA, disbursements are <i>milestone-based</i> rather than reimbursement-based. You are paid tranches upon verification of delivered milestones (e.g., approved MEL plan, baseline completed, vernacular audio engine deployed).", bullet_style))
     story.append(Paragraph("• <b>Designated Bank Account Establishment</b>: Open a segregated, dedicated institutional bank account (USD and local currency NGN) exclusively for USAID project funds. Never commingle grant funds with personal or general organizational capital.", bullet_style))
     story.append(Paragraph("• <b>Assignment of Key Personnel & Agreement Officer Representative (AOR)</b>: Finalize the formal designation of Dr. Young Irivboje as PI / Project Director and establish weekly communication protocols with your assigned USAID AOR in Washington.", bullet_style))
+    story.append(Spacer(1, 4))
+
+    # -------------------------------------------------------------
+    # SECTION 1B: STEP-BY-STEP SAM.GOV & NCAGE GUIDE FOR NIGERIAN ORGANIZATIONS
+    # -------------------------------------------------------------
+    story.append(Paragraph("Special Directive: Step-by-Step SAM.gov & NCAGE Guide for Nigerian Entities", h1_style))
+    story.append(Paragraph(
+        "Federal regulation (2 CFR Part 25) strictly mandates that foreign recipients of US grants hold an active registration in <b>SAM.gov</b> with a <b>Unique Entity Identifier (UEI)</b>. SAM.gov replaced the legacy DUNS number in April 2022. <b>Registration is 100% free of charge; beware of commercial third-party scams charging $500–$2,500.</b>",
+        body_style
+    ))
+
+    # NCAGE Field Instructions Table
+    ncage_guide_data = [
+        [
+            Paragraph("<b>Registration Step & Field</b>", table_header_style),
+            Paragraph("<b>Exact Input / Action for Naysa-84 Labs / AgroBiometrix</b>", table_header_style),
+            Paragraph("<b>Strategic Rationale & Critical Notes</b>", table_header_style)
+        ],
+        [
+            Paragraph("<b>Step 1: NCAGE Code Request</b><br/>(NATO NSPA Portal)<br/><font size='6.0' color='#555555'>eportal.nspa.nato.int</font>", table_cell_style),
+            Paragraph("• Enter Legal Name & Physical Address <b>identical to CAC documents</b>.<br/>• Global Location Number (GLN): <b>LEAVE BLANK</b>.<br/>• ISIC Code: <code>7210</code> (R&D in Natural Sciences & Agriculture).<br/>• NACE Code: <code>7219</code> (Research & Experimental Development).<br/>• NAICS Code: <code>541715</code> (R&D in Life Sciences) / <code>541511</code> (Software).<br/>• Common Procurement Vocabulary (CPV): <b>LEAVE BLANK</b>.", table_cell_style),
+            Paragraph("Non-US entities must obtain an NCAGE code before SAM.gov will validate their record. Codes are issued within 2–5 business days at <b>zero cost</b>. Entering GLN or CPV will trigger unnecessary document requests.", table_cell_style)
+        ],
+        [
+            Paragraph("<b>Future Business & SAM Question</b><br/>(NCAGE Questionnaires)", table_cell_style),
+            Paragraph("• <i>'NCAGE code needed for invitation to tender?'</i> → <b>Select NO</b>.<br/>• <i>'The NCAGE code is requested by SAM?'</i> → <b>Select YES</b>.", table_cell_style),
+            Paragraph("Selecting 'Yes' to tender forces you to provide military bid numbers. Selecting 'Yes' to SAM triggers an automated data bridge syncing NATO with the US Defense Logistics Agency (DLA) and SAM.gov.", table_cell_style)
+        ],
+        [
+            Paragraph("<b>Step 2: Login.gov Account</b><br/>(Administrative Credentials)", table_cell_style),
+            Paragraph("• Register with dedicated entity email: <code>n84labs@gmail.com</code>.<br/>• Activate Multi-Factor Authentication (Google Authenticator / SMS).<br/>• <b>Record and store the 16-character Emergency Recovery Key.</b>", table_cell_style),
+            Paragraph("Entity-dedicated Gmail accounts are fully accepted and prevent administrative lockout when personal or student university email accounts expire. The 16-character key is required if your device is lost.", table_cell_style)
+        ],
+        [
+            Paragraph("<b>Step 3: Document Readiness & Exact-Match Rule</b>", table_cell_style),
+            Paragraph("• CAC Certificate of Incorporation / Business Name Registration.<br/>• CAC Status Report / Form CAC 1.1 showing official registered address.<br/>• Official Nigerian Bank Statement showing identical company address.<br/>• Federal Tax Identification Number (TIN) from FIRS.", table_cell_style),
+            Paragraph("<b>The Exact-Match Rule:</b> SAM.gov compares inputs against government registries. Discrepancies in spelling, punctuation, or suite numbers trigger manual reviews that cause 3–4 week delays.", table_cell_style)
+        ],
+        [
+            Paragraph("<b>Step 4: SAM.gov Validation & UEI Generation</b>", table_cell_style),
+            Paragraph("• Select: <b>'Financial Assistance Awards Only'</b>.<br/>• Enter verified legal name, NCAGE, and physical address.<br/>• System automatically assigns your <b>12-character alphanumeric UEI</b>.", table_cell_style),
+            Paragraph("Financial Assistance registration is streamlined for grants and cooperative agreements, avoiding the complex FAR clauses required for US military commercial defense contracts.", table_cell_style)
+        ],
+        [
+            Paragraph("<b>Step 5: GSA Notarized Letter & Annual Renewal</b>", table_cell_style),
+            Paragraph("• Prepare GSA 'Template for Non-US Entities' on organization letterhead.<br/>• Appoint Dr. Young Irivboje as authorized Entity Administrator.<br/>• Stamp and sign before a Nigerian Notary Public / High Court Commissioner.<br/>• Upload PDF to Federal Service Desk (FSD.gov) for active status.", table_cell_style),
+            Paragraph("Mandatory anti-fraud control. Once approved, status becomes <b>ACTIVE</b>. Valid for exactly 365 days; must be renewed annually via a 10-minute online click-through to remain eligible for disbursements.", table_cell_style)
+        ]
+    ]
+
+    t_ncage = Table(ncage_guide_data, colWidths=[120, 214, 170])
+    t_ncage.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), usaid_blue),
+        ('BOX', (0, 0), (-1, -1), 0.8, colors.HexColor("#90CAF9")),
+        ('INNERGRID', (0, 0), (-1, -1), 0.4, border_gray),
+        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, pale_blue_bg]),
+        ('PADDING', (0, 0), (-1, -1), 2.8),
+        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+    ]))
+    story.append(t_ncage)
     story.append(Spacer(1, 6))
 
     # -------------------------------------------------------------
@@ -273,7 +334,7 @@ def build_pdf():
     # -------------------------------------------------------------
     story.append(Paragraph("Phase 1 to 5: The 24-Month Chronological Execution Lifecycle", h1_style))
     story.append(Paragraph(
-        "The project execution is organized into five structured phases across two full agricultural cropping cycles (Wet and Dry seasons):",
+        "Project execution spans five structured phases across two full agricultural cropping cycles (Wet and Dry seasons):",
         body_style
     ))
 

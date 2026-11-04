@@ -1,6 +1,7 @@
 """
 Generates the Microsoft Word (.docx) version of the AgroBiometrix USAID DIV Post-Award Master Operational Playbook.
 Target File: AgroBiometrix_USAID_DIV_Post_Award_Execution_Master_Playbook.docx
+Now updated with the full Step-by-Step SAM.gov & NCAGE Guide for Nigerian Organizations.
 """
 
 import os
@@ -116,7 +117,7 @@ def build_docx():
     meta_text = (
         "Award Mechanism: USAID DIV Stage 1 Proof of Concept ($150,000 / 24 Months) • Target Reach: 10,000+ Smallholders\n"
         "Lead Implementing Organization: AgroBiometrix Engineering Unit / Naysa-84 Labs in consortium with FUNAAB, OOU, FPI, and UGA\n"
-        "Principal Investigator / Project Director: Dr. Young Imienwain Irivboje (FUNAAB / Naysa-84)"
+        "Principal Investigator / Project Director: Dr. Young Imienwain Irivboje (FUNAAB / Naysa-84 Labs)"
     )
     r_meta = p_meta.add_run(meta_text)
     r_meta.font.italic = True
@@ -153,6 +154,70 @@ def build_docx():
         "• Designated Bank Account Establishment: Open a segregated, dedicated institutional bank account (USD and local currency NGN) exclusively for USAID project funds. Never commingle grant funds with personal or general organizational capital.\n"
         "• Assignment of Key Personnel & Agreement Officer Representative (AOR): Finalize the formal designation of Dr. Young Irivboje as PI / Project Director and establish weekly communication protocols with your assigned USAID AOR in Washington."
     )
+
+    # -------------------------------------------------------------
+    # SECTION 1B: STEP-BY-STEP SAM.GOV & NCAGE GUIDE FOR NIGERIAN ORGANIZATIONS
+    # -------------------------------------------------------------
+    h1b = doc.add_paragraph()
+    r1b = h1b.add_run("Special Directive: Step-by-Step SAM.gov & NCAGE Guide for Nigerian Entities")
+    r1b.font.bold = True
+    r1b.font.size = Pt(13)
+    r1b.font.color.rgb = RGBColor(0, 47, 108)
+    h1b.paragraph_format.space_before = Pt(12)
+    h1b.paragraph_format.space_after = Pt(4)
+
+    doc.add_paragraph(
+        "Federal regulation (2 CFR Part 25) strictly mandates that foreign recipients of US grants hold an active registration in SAM.gov with a Unique Entity Identifier (UEI). SAM.gov replaced the legacy DUNS number in April 2022. Registration is 100% free of charge; beware of commercial third-party scams charging $500–$2,500."
+    )
+
+    tbl_ncage = doc.add_table(rows=6, cols=3)
+    tbl_ncage.alignment = WD_TABLE_ALIGNMENT.CENTER
+    tbl_ncage.autofit = False
+
+    nc_headers = ["Registration Step & Field", "Exact Input / Action for Naysa-84 Labs / AgroBiometrix", "Strategic Rationale & Critical Notes"]
+    nc_col_widths = [Inches(1.8), Inches(2.6), Inches(2.1)]
+
+    for i, h in enumerate(nc_headers):
+        cell = tbl_ncage.cell(0, i)
+        cell.width = nc_col_widths[i]
+        set_cell_background(cell, "002F6C")
+        set_cell_margins(cell, top=100, bottom=100, left=100, right=100)
+        p = cell.paragraphs[0]
+        r = p.add_run(h)
+        r.font.bold = True
+        r.font.size = Pt(8.5)
+        r.font.color.rgb = RGBColor(255, 255, 255)
+
+    nc_rows = [
+        ["Step 1: NCAGE Code Request\n(NATO NSPA Portal)\neportal.nspa.nato.int",
+         "• Enter Legal Name & Address identical to CAC documents.\n• Global Location Number (GLN): LEAVE BLANK.\n• ISIC Code: 7210 (R&D in Natural Sciences & Agriculture).\n• NACE Code: 7219 (Research & Experimental Development).\n• NAICS Code: 541715 (R&D in Life Sciences) / 541511 (Software).\n• Common Procurement Vocabulary (CPV): LEAVE BLANK.",
+         "Non-US entities must obtain an NCAGE code before SAM.gov will validate their record. Codes are issued within 2–5 business days at zero cost. Entering GLN or CPV will trigger unnecessary document requests."],
+        ["Future Business & SAM Question\n(NCAGE Questionnaires)",
+         "• 'NCAGE code needed for invitation to tender?' → Select NO.\n• 'The NCAGE code is requested by SAM?' → Select YES.",
+         "Selecting 'Yes' to tender forces you to provide military bid numbers. Selecting 'Yes' to SAM triggers an automated data bridge syncing NATO with the US Defense Logistics Agency (DLA) and SAM.gov."],
+        ["Step 2: Login.gov Account\n(Administrative Credentials)",
+         "• Register with dedicated entity email: n84labs@gmail.com.\n• Activate Multi-Factor Authentication (Google Authenticator / SMS).\n• Record and store the 16-character Emergency Recovery Key.",
+         "Entity-dedicated Gmail accounts are fully accepted and prevent administrative lockout when personal or student university email accounts expire. The 16-character key is required if your device is lost."],
+        ["Step 3: Document Readiness & Exact-Match Rule",
+         "• CAC Certificate of Incorporation / Business Name Registration.\n• CAC Status Report / Form CAC 1.1 showing official registered address.\n• Official Nigerian Bank Statement showing identical company address.\n• Federal Tax Identification Number (TIN) from FIRS.",
+         "The Exact-Match Rule: SAM.gov compares inputs against government registries. Discrepancies in spelling, punctuation, or suite numbers trigger manual reviews that cause 3–4 week delays."],
+        ["Step 4: SAM.gov Validation & UEI Generation\n& Step 5: Notarized Letter",
+         "• Select: 'Financial Assistance Awards Only'.\n• System automatically assigns your 12-character alphanumeric UEI.\n• Prepare GSA 'Template for Non-US Entities' on letterhead.\n• Stamp and sign before a Nigerian Notary Public / High Court.\n• Upload PDF to Federal Service Desk (FSD.gov) for active status.",
+         "Financial Assistance registration is streamlined for grants and cooperative agreements. Notarized letter is a mandatory anti-fraud control. Valid for exactly 365 days; renewed annually via a 10-minute online click-through."]
+    ]
+
+    for row_idx, r_data in enumerate(nc_rows, start=1):
+        bg = "FFFFFF" if row_idx % 2 != 0 else "F0F4F8"
+        for col_idx, val in enumerate(r_data):
+            cell = tbl_ncage.cell(row_idx, col_idx)
+            cell.width = nc_col_widths[col_idx]
+            set_cell_background(cell, bg)
+            set_cell_margins(cell, top=70, bottom=70, left=80, right=80)
+            p = cell.paragraphs[0]
+            r = p.add_run(val)
+            r.font.size = Pt(8.0)
+
+    doc.add_paragraph().paragraph_format.space_after = Pt(6)
 
     # -------------------------------------------------------------
     # PHASES 1 TO 5 CHRONOLOGICAL TABLE
