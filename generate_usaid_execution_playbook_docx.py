@@ -118,7 +118,9 @@ def build_docx():
         "Award Mechanism: USAID DIV Stage 1 Proof of Concept ($150,000 / 24 Months) • Target Reach: 10,000+ Smallholders\n"
         "Lead Implementing Organization: AgroBiometrix Engineering Unit / Naysa-84 Labs in consortium with FUNAAB, OOU, FPI, and UGA\n"
         "Principal Investigator / Project Director: Dr. Young Imienwain Irivboje (FUNAAB / Naysa-84 Labs)\n"
-        "NATO Commercial and Government Entity (NCAGE) Code: STZZ1 (Active on NATO NSPA Portal)"
+        "NATO Commercial and Government Entity (NCAGE) Code: STZZ1 (Active on NATO NSPA Portal)\n"
+        "Fiscal Year End Date: December 31 (12/31)\n"
+        "SAM.gov Entity Validation Incident / Case ID: INC-GSAFSD21864803 (Documents Submitted, 1.5–3.5 Business Days Review)"
     )
     r_meta = p_meta.add_run(meta_text)
     r_meta.font.italic = True
@@ -202,9 +204,9 @@ def build_docx():
         ["Step 3: Document Readiness & Exact-Match Rule",
          "• CAC Certificate of Incorporation / Business Name Registration.\n• CAC Status Report / Form CAC 1.1 showing official registered address.\n• Official Nigerian Bank Statement showing identical company address.\n• Federal Tax Identification Number (TIN) from FIRS.",
          "The Exact-Match Rule: SAM.gov compares inputs against government registries. Discrepancies in spelling, punctuation, or suite numbers trigger manual reviews that cause 3–4 week delays."],
-        ["Step 4: SAM.gov Validation & UEI Generation\n& Step 5: Notarized Letter",
-         "• Select: 'Financial Assistance Awards Only'.\n• System automatically assigns your 12-character alphanumeric UEI.\n• Prepare GSA 'Template for Non-US Entities' on letterhead.\n• Stamp and sign before a Nigerian Notary Public / High Court.\n• Upload PDF to Federal Service Desk (FSD.gov) for active status.",
-         "Financial Assistance registration is streamlined for grants and cooperative agreements. Notarized letter is a mandatory anti-fraud control. Valid for exactly 365 days; renewed annually via a 10-minute online click-through."]
+        ["Step 4: SAM.gov Validation & UEI Generation\nSTATUS: SUBMITTED (INC-GSAFSD21864803)",
+         "• Purpose: Financial Assistance Awards Only (Selected).\n• Fiscal Year End: 12/31 | Matched NCAGE: STZZ1.\n• Uploaded CAC Status Report and official bank statement.\n• Reference Number: INC-GSAFSD21864803 submitted for GSA review (1.5–3.5 business days).\n• 12-character alphanumeric UEI unlocks immediately upon validation approval.",
+         "Financial Assistance registration is streamlined for grants and cooperative agreements. GSA Federal Service Desk is actively reviewing documents. Once cleared, UEI is assigned and remaining modules unlock."]
     ]
 
     for row_idx, r_data in enumerate(nc_rows, start=1):
@@ -258,12 +260,12 @@ def build_docx():
          "• From your SAM.gov Workspace home screen, locate the 'Entities' widget box.\n• Click the green 'Get Started' button (or select 'Register Entity').\n• Do not select search-only; choose the option to fully register the entity."],
         ["3", "Select Purpose of Registration\nFinancial Assistance Only",
          "• When prompted: 'What do you want to do?', select: 'Financial Assistance Awards Only'.\n• Critical Note: Do NOT select 'All Awards / Federal Contracts'. Financial Assistance is tailored for grants/cooperative agreements (like USAID DIV), skipping hundreds of complex defense FAR clauses."],
-        ["4", "Enter Entity Name, Address & NCAGE STZZ1",
-         "• Enter Legal Business Name and Physical Address character-for-character identical to your CAC incorporation and NATO NSPA records.\n• In the NCAGE Code box, enter: STZZ1.\n• 24–48h Sync Rule: If the system says 'NCAGE not found', NATO-DLA automated batch sync is in progress; re-try following the overnight synchronization window."],
-        ["5", "Validate Entity & Receive 12-Character UEI",
-         "• Click 'Validate Entity'. Confirm the displayed matched record.\n• SAM.gov immediately generates and displays your official 12-character alphanumeric UEI.\n• Contingency: If manual validation is triggered, upload CAC Status Report & Bank Statement.\n• Save your 12-character UEI immediately in your project records."],
-        ["6", "Complete Core Data & Designate POCs",
-         "• Enter Nigerian Tax Identification Number (TIN) from FIRS.\n• Select Business Type (e.g., For-Profit / Small Business / Research Entity).\n• Assign Dr. Young Imienwain Irivboje as both Government Business POC and Electronic Business POC using n84labs@gmail.com and primary contact phone."],
+        ["4", "Enter Details, Address & NCAGE STZZ1\nSTATUS: COMPLETED",
+         "• Selected: Directly with U.S. Federal Government > Financial Assistance Awards Only.\n• Government Entity: No | Department of Defense Assistance: No | Fiscal Year End: 12/31.\n• Entered NCAGE Code: STZZ1 matching CAC corporate record."],
+        ["5", "Upload Validation Documents & Submit\nSTATUS: SUBMITTED (INC-GSAFSD21864803)",
+         "• Uploaded CAC Certificate of Incorporation and Nigerian bank statement.\n• Official Reference Number: INC-GSAFSD21864803 generated.\n• Review Turnaround: 1.5 to 3.5 business days by GSA Federal Service Desk.\n• Monitor n84labs@gmail.com for notification of validation approval."],
+        ["6", "Claim 12-Character UEI & Complete Locked Sections\nPending Validation Approval",
+         "• Log back in upon email confirmation to claim your 12-character alphanumeric UEI.\n• Complete unlocked modules: Taxpayer Information (TIN), Business Types, Financial Information (EFT bank account), Legal Proceedings, Business Operations, Points of Contact (POC), and Financial Assistance Response.\n• Designate Dr. Young Irivboje as Government Business & Electronic Business POC."],
         ["7", "Submit GSA Notarized Letter\nFinal Activation Step",
          "• Download the official GSA 'Template for Non-US Entities' from FSD.gov.\n• Print on Naysa-84 Labs letterhead appointing Dr. Young Irivboje as Entity Administrator.\n• Have letter signed and stamped by a Nigerian Notary Public or High Court Commissioner.\n• Open a ticket on FSD.gov, attach the notarized PDF, and submit for final ACTIVE status."]
     ]
@@ -382,12 +384,12 @@ def build_docx():
          "• From your SAM.gov Workspace home screen, locate the 'Entities' widget box.\n• Click the green 'Get Started' button (or select 'Register Entity').\n• Do not select search-only; choose the option to fully register the entity."],
         ["3", "Select Purpose of Registration\nFinancial Assistance Only",
          "• When prompted: 'What do you want to do?', select: 'Financial Assistance Awards Only'.\n• Critical Note: Do NOT select 'All Awards / Federal Contracts'. Financial Assistance is tailored for grants/cooperative agreements (like USAID DIV), skipping hundreds of complex defense FAR clauses."],
-        ["4", "Enter Entity Name, Address & NCAGE STZZ1",
-         "• Enter Legal Business Name and Physical Address character-for-character identical to your CAC incorporation and NATO NSPA records.\n• In the NCAGE Code box, enter: STZZ1.\n• 24–48h Sync Rule: If the system says 'NCAGE not found', NATO-DLA automated batch sync is in progress; re-try following the overnight synchronization window."],
-        ["5", "Validate Entity & Receive 12-Character UEI",
-         "• Click 'Validate Entity'. Confirm the displayed matched record.\n• SAM.gov immediately generates and displays your official 12-character alphanumeric UEI.\n• Contingency: If manual validation is triggered, upload CAC Status Report & Bank Statement.\n• Save your 12-character UEI immediately in your project records."],
-        ["6", "Complete Core Data & Designate POCs",
-         "• Enter Nigerian Tax Identification Number (TIN) from FIRS.\n• Select Business Type (e.g., For-Profit / Small Business / Research Entity).\n• Assign Dr. Young Imienwain Irivboje as both Government Business POC and Electronic Business POC using n84labs@gmail.com and primary contact phone."],
+        ["4", "Enter Details, Address & NCAGE STZZ1\nSTATUS: COMPLETED",
+         "• Selected: Directly with U.S. Federal Government > Financial Assistance Awards Only.\n• Government Entity: No | Department of Defense Assistance: No | Fiscal Year End: 12/31.\n• Entered NCAGE Code: STZZ1 matching CAC corporate record."],
+        ["5", "Upload Validation Documents & Submit\nSTATUS: SUBMITTED (INC-GSAFSD21864803)",
+         "• Uploaded CAC Certificate of Incorporation and Nigerian bank statement.\n• Official Reference Number: INC-GSAFSD21864803 generated.\n• Review Turnaround: 1.5 to 3.5 business days by GSA Federal Service Desk.\n• Monitor n84labs@gmail.com for notification of validation approval."],
+        ["6", "Claim 12-Character UEI & Complete Locked Sections\nPending Validation Approval",
+         "• Log back in upon email confirmation to claim your 12-character alphanumeric UEI.\n• Complete unlocked modules: Taxpayer Information (TIN), Business Types, Financial Information (EFT bank account), Legal Proceedings, Business Operations, Points of Contact (POC), and Financial Assistance Response.\n• Designate Dr. Young Irivboje as Government Business & Electronic Business POC."],
         ["7", "Submit GSA Notarized Letter\nFinal Activation Step",
          "• Download the official GSA 'Template for Non-US Entities' from FSD.gov.\n• Print on Naysa-84 Labs letterhead appointing Dr. Young Irivboje as Entity Administrator.\n• Have letter signed and stamped by a Nigerian Notary Public or High Court Commissioner.\n• Open a ticket on FSD.gov, attach the notarized PDF, and submit for final ACTIVE status."]
     ]
@@ -506,12 +508,12 @@ def build_docx():
          "• From your SAM.gov Workspace home screen, locate the 'Entities' widget box.\n• Click the green 'Get Started' button (or select 'Register Entity').\n• Do not select search-only; choose the option to fully register the entity."],
         ["3", "Select Purpose of Registration\nFinancial Assistance Only",
          "• When prompted: 'What do you want to do?', select: 'Financial Assistance Awards Only'.\n• Critical Note: Do NOT select 'All Awards / Federal Contracts'. Financial Assistance is tailored for grants/cooperative agreements (like USAID DIV), skipping hundreds of complex defense FAR clauses."],
-        ["4", "Enter Entity Name, Address & NCAGE STZZ1",
-         "• Enter Legal Business Name and Physical Address character-for-character identical to your CAC incorporation and NATO NSPA records.\n• In the NCAGE Code box, enter: STZZ1.\n• 24–48h Sync Rule: If the system says 'NCAGE not found', NATO-DLA automated batch sync is in progress; re-try following the overnight synchronization window."],
-        ["5", "Validate Entity & Receive 12-Character UEI",
-         "• Click 'Validate Entity'. Confirm the displayed matched record.\n• SAM.gov immediately generates and displays your official 12-character alphanumeric UEI.\n• Contingency: If manual validation is triggered, upload CAC Status Report & Bank Statement.\n• Save your 12-character UEI immediately in your project records."],
-        ["6", "Complete Core Data & Designate POCs",
-         "• Enter Nigerian Tax Identification Number (TIN) from FIRS.\n• Select Business Type (e.g., For-Profit / Small Business / Research Entity).\n• Assign Dr. Young Imienwain Irivboje as both Government Business POC and Electronic Business POC using n84labs@gmail.com and primary contact phone."],
+        ["4", "Enter Details, Address & NCAGE STZZ1\nSTATUS: COMPLETED",
+         "• Selected: Directly with U.S. Federal Government > Financial Assistance Awards Only.\n• Government Entity: No | Department of Defense Assistance: No | Fiscal Year End: 12/31.\n• Entered NCAGE Code: STZZ1 matching CAC corporate record."],
+        ["5", "Upload Validation Documents & Submit\nSTATUS: SUBMITTED (INC-GSAFSD21864803)",
+         "• Uploaded CAC Certificate of Incorporation and Nigerian bank statement.\n• Official Reference Number: INC-GSAFSD21864803 generated.\n• Review Turnaround: 1.5 to 3.5 business days by GSA Federal Service Desk.\n• Monitor n84labs@gmail.com for notification of validation approval."],
+        ["6", "Claim 12-Character UEI & Complete Locked Sections\nPending Validation Approval",
+         "• Log back in upon email confirmation to claim your 12-character alphanumeric UEI.\n• Complete unlocked modules: Taxpayer Information (TIN), Business Types, Financial Information (EFT bank account), Legal Proceedings, Business Operations, Points of Contact (POC), and Financial Assistance Response.\n• Designate Dr. Young Irivboje as Government Business & Electronic Business POC."],
         ["7", "Submit GSA Notarized Letter\nFinal Activation Step",
          "• Download the official GSA 'Template for Non-US Entities' from FSD.gov.\n• Print on Naysa-84 Labs letterhead appointing Dr. Young Irivboje as Entity Administrator.\n• Have letter signed and stamped by a Nigerian Notary Public or High Court Commissioner.\n• Open a ticket on FSD.gov, attach the notarized PDF, and submit for final ACTIVE status."]
     ]

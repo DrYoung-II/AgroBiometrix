@@ -236,7 +236,8 @@ def build_pdf():
         "<b>Award Mechanism</b>: USAID DIV Stage 1 Proof of Concept ($150,000 / 24 Months) • <b>Target Reach</b>: 10,000+ Smallholders<br/>"
         "<b>Lead Implementing Organization</b>: AgroBiometrix Engineering Unit / Naysa-84 Labs in consortium with FUNAAB, OOU, FPI, and UGA<br/>"
         "<b>Principal Investigator / Project Director</b>: Dr. Young Imienwain Irivboje (FUNAAB / Naysa-84 Labs)<br/>"
-        "<b>NATO Commercial and Government Entity (NCAGE) Code</b>: <b>STZZ1</b> (Active on NATO NSPA Portal)"
+        "<b>NATO CAGE (NCAGE) Code</b>: <b>STZZ1</b> (Active on NATO NSPA Portal) • <b>Fiscal Year End</b>: December 31 (12/31)<br/>"
+        "<b>SAM.gov Entity Validation Incident ID</b>: <b>INC-GSAFSD21864803</b> (Documentation Submitted, 1.5–3.5 Business Days Review)"
     )
     story.append(Paragraph(meta_info, meta_style))
     story.append(Spacer(1, 3))
@@ -307,9 +308,9 @@ def build_pdf():
             Paragraph("<b>The Exact-Match Rule:</b> SAM.gov compares inputs against government registries. Discrepancies in spelling, punctuation, or suite numbers trigger manual reviews that cause 3–4 week delays.", table_cell_style)
         ],
         [
-            Paragraph("<b>Step 4: SAM.gov Validation & UEI Generation</b>", table_cell_style),
-            Paragraph("• Select: <b>'Financial Assistance Awards Only'</b>.<br/>• Enter verified legal name, NCAGE, and physical address.<br/>• System automatically assigns your <b>12-character alphanumeric UEI</b>.", table_cell_style),
-            Paragraph("Financial Assistance registration is streamlined for grants and cooperative agreements, avoiding the complex FAR clauses required for US military commercial defense contracts.", table_cell_style)
+            Paragraph("<b>Step 4: SAM.gov Validation & UEI Generation</b><br/><font size='6.0' color='#1565C0'><b>SUBMITTED: INC-GSAFSD21864803</b></font>", table_cell_style),
+            Paragraph("• Select: <b>'Financial Assistance Awards Only'</b>; Fiscal Year End: <b>12/31</b>.<br/>• Matched NCAGE: <b>STZZ1</b>; uploaded CAC Status Report & bank proof.<br/>• Incident Number: <b>INC-GSAFSD21864803</b> submitted for GSA review.<br/>• Turnaround estimate: <b>1.5–3.5 business days</b> to unlock UEI.", table_cell_style),
+            Paragraph("Financial Assistance registration is streamlined for grants and cooperative agreements. Documentation is under active review by the GSA Federal Service Desk (FSD). Once verified, the 12-character UEI unlocks immediately.", table_cell_style)
         ],
         [
             Paragraph("<b>Step 5: GSA Notarized Letter & Annual Renewal</b>", table_cell_style),
@@ -360,18 +361,18 @@ def build_pdf():
         ],
         [
             Paragraph("<b>4</b>", table_cell_style),
-            Paragraph("<b>Enter Entity Name, Address & NCAGE STZZ1</b>", table_cell_style),
-            Paragraph("• Enter <b>Legal Business Name</b> and <b>Physical Address</b> character-for-character identical to your CAC incorporation and NATO NSPA records.<br/>• In the NCAGE Code box, enter: <b>STZZ1</b>.<br/>• <i>24–48h Sync Rule:</i> If the system says 'NCAGE not found', NATO-DLA automated batch sync is in progress; re-try following the overnight synchronization window.", table_cell_style)
+            Paragraph("<b>Enter Entity Name, Address & NCAGE STZZ1</b><br/><font size='6.0' color='#2E7D32'><b>COMPLETED</b></font>", table_cell_style),
+            Paragraph("• Selected: <i>Directly with U.S. Federal Government</i> → <i>Financial Assistance Awards Only</i>.<br/>• Government entity: <i>No</i> | DoD assistance: <i>No</i> | Fiscal Year End: <i>12/31</i>.<br/>• Matched verified NATO CAGE code: <b>STZZ1</b> against CAC legal record.", table_cell_style)
         ],
         [
             Paragraph("<b>5</b>", table_cell_style),
-            Paragraph("<b>Validate Entity & Receive 12-Character UEI</b>", table_cell_style),
-            Paragraph("• Click <b>'Validate Entity'</b>. Confirm the displayed matched record.<br/>• SAM.gov immediately generates and displays your official <b>12-character alphanumeric UEI</b>.<br/>• <i>Contingency:</i> If manual validation is triggered, upload CAC Status Report & Bank Statement.<br/>• <b>Save your 12-character UEI immediately in your project records.</b>", table_cell_style)
+            Paragraph("<b>Submit Validation Documents</b><br/><font size='6.0' color='#1565C0'><b>INC-GSAFSD21864803</b></font>", table_cell_style),
+            Paragraph("• CAC incorporation certificates and Nigerian bank statement submitted.<br/>• Official GSA FSD Incident Reference: <b>INC-GSAFSD21864803</b>.<br/>• Review turnaround estimate: <b>1.5 to 3.5 business days</b>.<br/>• Monitor <code>n84labs@gmail.com</code> for the FSD entity validation clearance email.", table_cell_style)
         ],
         [
             Paragraph("<b>6</b>", table_cell_style),
-            Paragraph("<b>Complete Core Data & Designate POCs</b>", table_cell_style),
-            Paragraph("• Enter Nigerian Tax Identification Number (TIN) from FIRS.<br/>• Select Business Type (e.g., <i>For-Profit / Small Business / Research Entity</i>).<br/>• Assign <b>Dr. Young Imienwain Irivboje</b> as both <b>Government Business POC</b> and <b>Electronic Business POC</b> using <code>n84labs@gmail.com</code> and primary contact phone.", table_cell_style)
+            Paragraph("<b>Claim UEI & Complete Locked Sections</b><br/><font size='6.0' color='#555555'>Unlocks After Validation</font>", table_cell_style),
+            Paragraph("• Upon validation clearance, log in to claim your <b>12-character alphanumeric UEI</b>.<br/>• Complete unlocked modules: Taxpayer Information (TIN), Business Types, Financial Information (EFT bank account), Legal Proceedings, Business Operations, Points of Contact (POC), and Financial Assistance Response.<br/>• Assign <b>Dr. Young Imienwain Irivboje</b> as Electronic and Government Business POC.", table_cell_style)
         ],
         [
             Paragraph("<b>7</b>", table_cell_style),
