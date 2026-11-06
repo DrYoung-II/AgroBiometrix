@@ -235,7 +235,8 @@ def build_pdf():
     meta_info = (
         "<b>Award Mechanism</b>: USAID DIV Stage 1 Proof of Concept ($150,000 / 24 Months) • <b>Target Reach</b>: 10,000+ Smallholders<br/>"
         "<b>Lead Implementing Organization</b>: AgroBiometrix Engineering Unit / Naysa-84 Labs in consortium with FUNAAB, OOU, FPI, and UGA<br/>"
-        "<b>Principal Investigator / Project Director</b>: Dr. Young Imienwain Irivboje (FUNAAB / Naysa-84 Labs)"
+        "<b>Principal Investigator / Project Director</b>: Dr. Young Imienwain Irivboje (FUNAAB / Naysa-84 Labs)<br/>"
+        "<b>NATO Commercial and Government Entity (NCAGE) Code</b>: <b>STZZ1</b> (Active on NATO NSPA Portal)"
     )
     story.append(Paragraph(meta_info, meta_style))
     story.append(Spacer(1, 3))
@@ -286,9 +287,9 @@ def build_pdf():
             Paragraph("<b>Strategic Rationale & Critical Notes</b>", table_header_style)
         ],
         [
-            Paragraph("<b>Step 1: NCAGE Code Request</b><br/>(NATO NSPA Portal)<br/><font size='6.0' color='#555555'>eportal.nspa.nato.int</font>", table_cell_style),
-            Paragraph("• Enter Legal Name & Physical Address <b>identical to CAC documents</b>.<br/>• Global Location Number (GLN): <b>LEAVE BLANK</b>.<br/>• ISIC Code: <code>7210</code> (R&D in Natural Sciences & Agriculture).<br/>• NACE Code: <code>7219</code> (Research & Experimental Development).<br/>• NAICS Code: <code>541715</code> (R&D in Life Sciences) / <code>541511</code> (Software).<br/>• Common Procurement Vocabulary (CPV): <b>LEAVE BLANK</b>.", table_cell_style),
-            Paragraph("Non-US entities must obtain an NCAGE code before SAM.gov will validate their record. Codes are issued within 2–5 business days at <b>zero cost</b>. Entering GLN or CPV will trigger unnecessary document requests.", table_cell_style)
+            Paragraph("<b>Step 1: NCAGE Code Request</b><br/>(NATO NSPA Portal)<br/><font size='6.0' color='#2E7D32'><b>STATUS: ASSIGNED (STZZ1)</b></font>", table_cell_style),
+            Paragraph("• Official NCAGE Code: <b>STZZ1</b> (Active on NATO Codification Directory).<br/>• Verified URL: <code>https://eportal.nspa.nato.int/Codification/CageTool/cage-view/STZZ1</code>.<br/>• Legal Name & Physical Address verified against CAC records.<br/>• ISIC: <code>7210</code> | NAICS: <code>541715</code> (Life Sciences R&D).", table_cell_style),
+            Paragraph("<b>Prerequisite Achieved.</b> NATO Support and Procurement Agency has codified the entity. Code STZZ1 is active and ready for entry into SAM.gov for direct US DLA validation.", table_cell_style)
         ],
         [
             Paragraph("<b>Future Business & SAM Question</b><br/>(NCAGE Questionnaires)", table_cell_style),
