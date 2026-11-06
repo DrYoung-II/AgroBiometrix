@@ -328,6 +328,68 @@ def build_pdf():
         ('VALIGN', (0, 0), (-1, -1), 'TOP'),
     ]))
     story.append(t_ncage)
+    story.append(Spacer(1, 5))
+
+    # Action Sequence Table: What to Do Next on SAM.gov
+    story.append(Paragraph("Action Protocol: Step-by-Step What to Do Next on SAM.gov (Using NCAGE STZZ1)", h2_style))
+    story.append(Paragraph(
+        "Now that NATO CAGE code <b>STZZ1</b> is active, follow this exact sequential walkthrough on <b>SAM.gov</b> to claim your 12-character Unique Entity Identifier (UEI) and finalize entity registration:",
+        body_style
+    ))
+
+    sam_steps_data = [
+        [
+            Paragraph("<b>Seq #</b>", table_header_style),
+            Paragraph("<b>Operational Phase on SAM.gov</b>", table_header_style),
+            Paragraph("<b>Exact User Actions, Click Paths & Practical Tips</b>", table_header_style)
+        ],
+        [
+            Paragraph("<b>1</b>", table_cell_style),
+            Paragraph("<b>Sign In via Login.gov</b><br/><font size='6.0' color='#555555'>https://sam.gov</font>", table_cell_style),
+            Paragraph("• Click <b>'Sign In'</b> at top right of SAM.gov.<br/>• Authenticate using dedicated email: <code>n84labs@gmail.com</code>.<br/>• Enter your Multi-Factor Authentication (MFA) code (Google Authenticator or SMS).", table_cell_style)
+        ],
+        [
+            Paragraph("<b>2</b>", table_cell_style),
+            Paragraph("<b>Initiate Entity Registration</b><br/><font size='6.0' color='#555555'>Workspace &gt; Entities</font>", table_cell_style),
+            Paragraph("• From your SAM.gov Workspace home screen, locate the <b>'Entities'</b> widget box.<br/>• Click the green <b>'Get Started'</b> button (or select <b>'Register Entity'</b>).<br/>• Do not select search-only; choose the option to fully register the entity.", table_cell_style)
+        ],
+        [
+            Paragraph("<b>3</b>", table_cell_style),
+            Paragraph("<b>Select Purpose of Registration</b><br/><font size='6.0' color='#1B5E20'><b>Financial Assistance Only</b></font>", table_cell_style),
+            Paragraph("• When prompted: <i>'What do you want to do?'</i>, select: <b>'Financial Assistance Awards Only'</b>.<br/>• <b>Critical Note:</b> Do NOT select 'All Awards / Federal Contracts'. Financial Assistance is tailored for grants/cooperative agreements (like USAID DIV), skipping hundreds of complex defense FAR clauses.", table_cell_style)
+        ],
+        [
+            Paragraph("<b>4</b>", table_cell_style),
+            Paragraph("<b>Enter Entity Name, Address & NCAGE STZZ1</b>", table_cell_style),
+            Paragraph("• Enter <b>Legal Business Name</b> and <b>Physical Address</b> character-for-character identical to your CAC incorporation and NATO NSPA records.<br/>• In the NCAGE Code box, enter: <b>STZZ1</b>.<br/>• <i>24–48h Sync Rule:</i> If the system says 'NCAGE not found', NATO-DLA automated batch sync is in progress; re-try following the overnight synchronization window.", table_cell_style)
+        ],
+        [
+            Paragraph("<b>5</b>", table_cell_style),
+            Paragraph("<b>Validate Entity & Receive 12-Character UEI</b>", table_cell_style),
+            Paragraph("• Click <b>'Validate Entity'</b>. Confirm the displayed matched record.<br/>• SAM.gov immediately generates and displays your official <b>12-character alphanumeric UEI</b>.<br/>• <i>Contingency:</i> If manual validation is triggered, upload CAC Status Report & Bank Statement.<br/>• <b>Save your 12-character UEI immediately in your project records.</b>", table_cell_style)
+        ],
+        [
+            Paragraph("<b>6</b>", table_cell_style),
+            Paragraph("<b>Complete Core Data & Designate POCs</b>", table_cell_style),
+            Paragraph("• Enter Nigerian Tax Identification Number (TIN) from FIRS.<br/>• Select Business Type (e.g., <i>For-Profit / Small Business / Research Entity</i>).<br/>• Assign <b>Dr. Young Imienwain Irivboje</b> as both <b>Government Business POC</b> and <b>Electronic Business POC</b> using <code>n84labs@gmail.com</code> and primary contact phone.", table_cell_style)
+        ],
+        [
+            Paragraph("<b>7</b>", table_cell_style),
+            Paragraph("<b>Submit GSA Notarized Letter</b><br/><font size='6.0' color='#BA0C2F'><b>Final Activation Step</b></font>", table_cell_style),
+            Paragraph("• Download the official GSA <i>'Template for Non-US Entities'</i> from FSD.gov.<br/>• Print on Naysa-84 Labs letterhead appointing Dr. Young Irivboje as Entity Administrator.<br/>• Have letter signed and stamped by a <b>Nigerian Notary Public</b> or High Court Commissioner.<br/>• Open a ticket on <b>FSD.gov</b>, attach the notarized PDF, and submit for final <b>ACTIVE</b> status.", table_cell_style)
+        ]
+    ]
+
+    t_sam_steps = Table(sam_steps_data, colWidths=[30, 150, 324])
+    t_sam_steps.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), forest_green),
+        ('BOX', (0, 0), (-1, -1), 0.8, colors.HexColor("#A5D6A7")),
+        ('INNERGRID', (0, 0), (-1, -1), 0.4, border_gray),
+        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, pale_green_bg]),
+        ('PADDING', (0, 0), (-1, -1), 2.5),
+        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+    ]))
+    story.append(t_sam_steps)
     story.append(Spacer(1, 6))
 
     # -------------------------------------------------------------
