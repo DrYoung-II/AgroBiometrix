@@ -304,12 +304,12 @@ def build_pdf():
         ],
         [
             Paragraph("<b>Step 3: Document Readiness & Exact-Match Rule</b>", table_cell_style),
-            Paragraph("• CAC Certificate of Incorporation / Business Name Registration.<br/>• CAC Status Report / Form CAC 1.1 showing official registered address.<br/>• Official Nigerian Bank Statement showing identical company address.<br/>• Federal Tax Identification Number (TIN) from FIRS.", table_cell_style),
+            Paragraph("• CAC Certificate of Incorporation / Business Name Registration.<br/>• CAC Status Report / Form CAC 1.1 showing official registered address.<br/>• Official Nigerian Bank Statement or Utility Bill (supplementary if requested).<br/>• Federal Tax Identification Number (TIN) from FIRS.", table_cell_style),
             Paragraph("<b>The Exact-Match Rule:</b> SAM.gov compares inputs against government registries. Discrepancies in spelling, punctuation, or suite numbers trigger manual reviews that cause 3–4 week delays.", table_cell_style)
         ],
         [
             Paragraph("<b>Step 4: SAM.gov Validation & UEI Generation</b><br/><font size='6.0' color='#1565C0'><b>SUBMITTED: INC-GSAFSD21864803</b></font>", table_cell_style),
-            Paragraph("• Select: <b>'Financial Assistance Awards Only'</b>; Fiscal Year End: <b>12/31</b>.<br/>• Matched NCAGE: <b>STZZ1</b>; uploaded CAC Status Report & bank proof.<br/>• Incident Number: <b>INC-GSAFSD21864803</b> submitted for GSA review.<br/>• Turnaround estimate: <b>1.5–3.5 business days</b> to unlock UEI.", table_cell_style),
+            Paragraph("• Select: <b>'Financial Assistance Awards Only'</b>; Fiscal Year End: <b>12/31</b>.<br/>• Matched NCAGE: <b>STZZ1</b>; uploaded official CAC incorporation documents.<br/>• Incident Number: <b>INC-GSAFSD21864803</b> submitted for GSA review.<br/>• Turnaround estimate: <b>1.5–3.5 business days</b> to unlock UEI.", table_cell_style),
             Paragraph("Financial Assistance registration is streamlined for grants and cooperative agreements. Documentation is under active review by the GSA Federal Service Desk (FSD). Once verified, the 12-character UEI unlocks immediately.", table_cell_style)
         ],
         [
@@ -367,7 +367,7 @@ def build_pdf():
         [
             Paragraph("<b>5</b>", table_cell_style),
             Paragraph("<b>Submit Validation Documents</b><br/><font size='6.0' color='#1565C0'><b>INC-GSAFSD21864803</b></font>", table_cell_style),
-            Paragraph("• CAC incorporation certificates and Nigerian bank statement submitted.<br/>• Official GSA FSD Incident Reference: <b>INC-GSAFSD21864803</b>.<br/>• Review turnaround estimate: <b>1.5 to 3.5 business days</b>.<br/>• Monitor <code>n84labs@gmail.com</code> for the FSD entity validation clearance email.", table_cell_style)
+            Paragraph("• Official CAC incorporation certificates and status report submitted.<br/>• Official GSA FSD Incident Reference: <b>INC-GSAFSD21864803</b>.<br/>• Review turnaround estimate: <b>1.5 to 3.5 business days</b>.<br/>• Monitor <code>n84labs@gmail.com</code> for the FSD entity validation clearance email.", table_cell_style)
         ],
         [
             Paragraph("<b>6</b>", table_cell_style),
