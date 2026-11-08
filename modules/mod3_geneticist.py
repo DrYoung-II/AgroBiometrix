@@ -39,15 +39,26 @@ def render_statistical_geneticist():
         st.caption("Publication-grade statistical analysis with automated pedagogical justifications, mean separation tests, and BLUP.")
 
     # Dataset selection
+    data_opts = [
+        "Load Pre-loaded Maize Agronomy Trial (NPK x Irrigation)",
+        "Load Pre-loaded Cattle Trial",
+        "Upload Custom CSV File"
+    ]
+    if "cleaned_active_df" in st.session_state and st.session_state["cleaned_active_df"] is not None:
+        data_opts.insert(0, "✨ Use Cleaned Dataset from Cleaning Studio")
+
     data_source = st.radio(
         "Choose Data Source:",
-        ["Load Pre-loaded Maize Agronomy Trial (NPK x Irrigation)", "Load Pre-loaded Cattle Trial", "Upload Custom CSV File"],
+        data_opts,
         horizontal=True
     )
 
     df = None
     dataset_name = "maize_trial"
-    if data_source == "Load Pre-loaded Maize Agronomy Trial (NPK x Irrigation)":
+    if data_source == "✨ Use Cleaned Dataset from Cleaning Studio":
+        df = st.session_state["cleaned_active_df"].copy()
+        dataset_name = st.session_state.get("cleaned_active_name", "cleaned_dataset")
+    elif data_source == "Load Pre-loaded Maize Agronomy Trial (NPK x Irrigation)":
         path = os.path.join("data", "sample_maize_agronomy_trials.csv")
         if os.path.exists(path):
             df = pd.read_csv(path)

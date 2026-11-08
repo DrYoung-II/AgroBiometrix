@@ -1,0 +1,22 @@
+Plot_ID,Treatment,Block_Replicate,Plant_Height_cm,Grain_Yield_kg_ha,Soil_pH,Disease_Incidence_pct
+P101,Control,Block_1,142.5,3120.0,6.2,12.0
+P102, control ,Block_1,140.2,3050.5,6.1,14.5
+P103,CTRL,Block_2,144.0,,6.3,11.0
+P104,Control,Block_2,999.0,3180.0,6.2,13.5
+P105,NPK_Optimal,Block_1,168.4,4850.0,6.5,8.0
+P106,npk_optimal,Block_1,165.0,4920.5,6.4,7.5
+P107,NPK_Optimal,Block_2,170.2,14500.0,6.5,9.0
+P108,NPK_Optimal,Block_2,,4780.0,6.6,8.5
+P109,Biochar_NPK,Block_1,175.5,5240.0,6.8,5.0
+P110, Biochar_NPK ,Block_1,173.0,5190.0,6.7,6.0
+P111,Biochar_NPK,Block_2,177.0,5310.5,18.5,4.5
+P112,Biochar_NPK,Block_2,174.2,5280.0,6.9,145.0
+P113,Organic_Manure,Block_1,155.0,3950.0,6.3,10.0
+P114,Organic_Manure,Block_1,-25.0,4020.0,6.4,9.5
+P115,organic_manure,Block_2,158.4,,6.3,11.0
+P116,Organic_Manure,Block_2,156.0,3980.5,6.2,10.5
+P116,Organic_Manure,Block_2,156.0,3980.5,6.2,10.5
+P117,Drought_Stress,Block_1,118.0,1850.0,5.9,22.0
+P118,drought_stress,Block_1,115.5,1820.5,5.8,24.5
+P119,Drought_Stress,Block_2,,1890.0,5.9,21.0
+P120,Drought_Stress,Block_2,119.2,1870.0,5.8,23.5

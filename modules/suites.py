@@ -16,6 +16,7 @@ import streamlit as st
 from modules.mod8_designer import render_experiment_designer, render_dataset_health_auditor
 from modules.mod3_geneticist import render_statistical_geneticist
 from modules.mod4_plant_breeding import render_plant_breeding
+from modules.mod16_cleaner import render_data_cleaning_studio
 
 from modules.mod2_scientist import render_research_scientist
 from modules.mod9_literature import render_literature_scientist
@@ -41,12 +42,13 @@ def _is_fr() -> bool:
 def render_suite_biometrics():
     """
     Suite 2: Experimental Biometrics & Crop Breeding
-    Consolidates Data Health Audit, Trial Design, Statistical ANOVA/DMRT, and Plant Breeding.
+    Consolidates Data Cleaning, Data Health Audit, Trial Design, Statistical ANOVA/DMRT, and Plant Breeding.
     """
     if _is_fr():
         st.markdown("## 🧬 Biométrie Expérimentale & Amélioration des Plantes")
-        st.caption("Intelligence biométrique de bout en bout : de l'audit de santé des données (valeurs manquantes, équilibre) et des plans expérimentaux (RCBD, Split-Plot) jusqu'à la séparation de moyennes (DMRT/Tukey) et la sélection variétale quantitative.")
+        st.caption("Intelligence biométrique de bout en bout : du nettoyage et l'imputation des données jusqu'à l'audit de santé, la planification expérimentale (RCBD, Split-Plot), la séparation de moyennes (DMRT/Tukey) et la sélection variétale.")
         tab_titles = [
+            "🧹 Studio de Nettoyage & Transformation",
             "🩺 Audit de Santé des Données & Hypothèses",
             "📐 Conception & Dispositifs Expérimentaux",
             "📊 Statistiques Biométriques & DMRT",
@@ -54,15 +56,19 @@ def render_suite_biometrics():
         ]
     else:
         st.markdown("## 🧬 Experimental Biometrics & Crop Breeding")
-        st.caption("End-to-end biometrical intelligence: from pre-analysis data health audits (missingness, balance) and automated experimental design (RCBD, Split-Plot) to mean separation tests (DMRT/Tukey) and quantitative cultivar selection.")
+        st.caption("End-to-end biometrical intelligence: from data cleaning and missing value imputation to pre-analysis health audits, experimental design, mean separation tests (DMRT/Tukey), and quantitative cultivar selection.")
         tab_titles = [
+            "🧹 Data Cleaning & Transformation Studio",
             "🩺 Pre-Analysis Data Health Auditor",
             "📐 Experimental Design & Layout",
             "📊 Statistical Biometrics & DMRT",
             "🌽 Plant Breeding & Cultivar Selection"
         ]
 
-    tab_audit, tab_design, tab_stats, tab_breeding = st.tabs(tab_titles)
+    tab_clean, tab_audit, tab_design, tab_stats, tab_breeding = st.tabs(tab_titles)
+
+    with tab_clean:
+        render_data_cleaning_studio()
 
     with tab_audit:
         render_dataset_health_auditor()

@@ -179,16 +179,22 @@ def render_dataset_health_auditor():
         st.caption("Inspecte les jeux de données expérimentaux pour détecter les valeurs manquantes, l'équilibre des facteurs et l'adéquation des modèles.")
         ds_choice_lbl = "Choisir le jeu de données à auditer :"
         ds_choice_opts = ["Charger l'Essai Bovin Pré-chargé", "Téléverser un Fichier CSV Personnalisé"]
+        if "cleaned_active_df" in st.session_state and st.session_state["cleaned_active_df"] is not None:
+            ds_choice_opts.insert(0, "✨ Inspecter le Jeu de Données Nettoyé")
     else:
         st.markdown("### 🩺 Pre-Analysis Dataset Health & Missingness Auditor")
         st.caption("Inspects experimental datasets for missingness, experimental factor balance, repeated measures, and model appropriateness before running ANOVA/DMRT.")
         ds_choice_lbl = "Choose Dataset to Inspect:"
         ds_choice_opts = ["Load Pre-loaded Cattle Trial Dataset", "Upload Custom CSV File"]
+        if "cleaned_active_df" in st.session_state and st.session_state["cleaned_active_df"] is not None:
+            ds_choice_opts.insert(0, "✨ Inspect Cleaned Dataset from Studio")
 
     ds_choice = st.radio(ds_choice_lbl, ds_choice_opts, horizontal=True, key="auditor_ds_choice")
 
     df_inspect = None
-    if ds_choice in ["Load Pre-loaded Cattle Trial Dataset", "Charger l'Essai Bovin Pré-chargé"]:
+    if ds_choice in ["✨ Inspect Cleaned Dataset from Studio", "✨ Inspecter le Jeu de Données Nettoyé"]:
+        df_inspect = st.session_state["cleaned_active_df"].copy()
+    elif ds_choice in ["Load Pre-loaded Cattle Trial Dataset", "Charger l'Essai Bovin Pré-chargé"]:
         cattle_path = os.path.join("data", "sample_cattle_heat_tolerance.csv")
         if os.path.exists(cattle_path):
             df_inspect = pd.read_csv(cattle_path)
