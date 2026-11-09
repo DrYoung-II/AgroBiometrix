@@ -349,6 +349,11 @@ def build_pdf():
             Paragraph("<b>Tenacity & Bureaucratic Stamina:</b> Methodical execution through dense intergovernmental regulatory mazes without delay.", table_cell_style)
         ],
         [
+            Paragraph("<b>Field Data Sanitation & Imputation</b><br/>(Suite 2 Cleaning Studio)", table_cell_style),
+            Paragraph("Architected the Interactive Data Cleaning Studio, integrating Group-Aware Treatment Mean Imputation, Tukey IQR outlier winsorization, and biological range boundary guards to guarantee raw field data satisfies Gauss-Markov ANOVA assumptions.", table_cell_style),
+            Paragraph("<b>Data Quality & Algorithmic Stewardship:</b> Proactively solving the 'garbage in, garbage out' trap in agricultural research before biometrical analysis.", table_cell_style)
+        ],
+        [
             Paragraph("<b>Consortium Mobilization</b><br/>(Multi-Institutional Alliance)", table_cell_style),
             Paragraph("Assembled and formalized commitments across 8 senior investigators from FUNAAB, OOU, FPI, and UGA, harmonizing diverse scientific domains into one cohesive team.", table_cell_style),
             Paragraph("<b>Collaborative Leadership & Humility:</b> Unifying diverse academic minds toward a shared continental transformation mission.", table_cell_style)

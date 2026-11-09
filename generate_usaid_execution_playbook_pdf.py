@@ -419,7 +419,7 @@ def build_pdf():
         [
             Paragraph("<b>Months 5–8</b><br/><font color='#555555' size='6.5'>Phase 2</font>", table_cell_style),
             Paragraph("<b>Technical Engineering & Broadcast Setup</b>", table_cell_style),
-            Paragraph("• Production deployment of Suite 8: Last-Mile Vernacular Radio Engine.<br/>• Integrate Africa's Talking API for 2G GSM cellular voice robocalls.<br/>• Onboard 10–15 rural community FM radio stations (ZaraRadio/Rivendell automated RSS podcast polling).<br/>• Ingest NARS soil acidity titration & SAMMAZ maize trial datasets.<br/>• Complete colloquial translation & voice QA (Hausa, Yoruba, Swahili, French).", table_cell_style),
+            Paragraph("• Production deployment of Suite 8: Last-Mile Vernacular Radio Engine.<br/>• Integrate Africa's Talking API for 2G GSM cellular voice robocalls.<br/>• Deploy Suite 2 Interactive Data Cleaning Studio (group-aware imputation & IQR winsorization).<br/>• Onboard 10–15 rural community FM radio stations (ZaraRadio/Rivendell RSS polling).<br/>• Ingest NARS soil acidity titration & SAMMAZ maize trial datasets.<br/>• Complete colloquial translation & voice QA (Hausa, Yoruba, Swahili, French).", table_cell_style),
             Paragraph("<b>Milestone 2</b><br/>Verified Telephony & Radio Pipeline + Station MoUs ($30,000)", table_cell_style)
         ],
         [

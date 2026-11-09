@@ -234,7 +234,7 @@ def build_docx():
     doc.add_paragraph(
         "AgroBiometrix is structured as an integrated operating system comprising eight specialized computational suites, governed by a Two-Tier Hybrid Computing Paradigm:\n"
         "• Suite 1: Academic & Research Proposal Architect (7-part grant proposals and hypothesis formulation)\n"
-        "• Suite 2: Advanced Biometrical & Statistical Compute Engine (LMM, BLUP, RCBD ANOVA, Duncan's MRT)\n"
+        "• Suite 2: Advanced Biometrical, Data Cleaning & Statistical Compute Engine (Interactive Imputation, IQR Winsorization, LMM, BLUP, RCBD ANOVA, Duncan's MRT)\n"
         "• Suite 3: Crop Breeding & Multi-Environment Trials (MET) (CMD2/CBSD cassava scoring, SAMMAZ maize)\n"
         "• Suite 4: Livestock Health, Biosecurity & Genetics (ADGG dairy, PCV trypanotolerance, NVRI vaccines)\n"
         "• Suite 5: Soil Chemistry, ISFM & Liming Kinetics (Al³⁺ titration, stoichiometric NPK balancing)\n"

@@ -184,7 +184,7 @@ def build_docx():
     h2.paragraph_format.space_before = Pt(12)
     h2.paragraph_format.space_after = Pt(4)
 
-    tbl = doc.add_table(rows=7, cols=3)
+    tbl = doc.add_table(rows=8, cols=3)
     tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
     tbl.autofit = False
 
@@ -206,6 +206,9 @@ def build_docx():
         ["Algorithmic & Statistical Modeling\n(Suites 1–4 Engine)",
          "Mandated strict derivation of two-way ANOVA, Henderson's MME for BLUP, AMMI/GGE singular value decomposition, and exact heritability constraints (0 ≤ h² ≤ 1).",
          "Scientific Rigor & Intellectual Integrity: Zero tolerance for black-box approximations; insistence on publishable mathematical truth."],
+        ["Field Data Sanitation & Imputation\n(Suite 2 Cleaning Studio)",
+         "Architected the Interactive Data Cleaning Studio, integrating Group-Aware Treatment Mean Imputation, Tukey IQR outlier winsorization, and biological range boundary guards to guarantee raw field data satisfies Gauss-Markov ANOVA assumptions.",
+         "Data Quality & Algorithmic Stewardship: Proactively solving the 'garbage in, garbage out' trap in agricultural research before biometrical analysis."],
         ["The Last-Mile Extension Barrier\n(Rural Infrastructure Reality)",
          "Rejected smartphone-only mobile apps; pioneered Suite 8 to automate audio synthesis for community FM radio RSS feeds and 2G GSM cellular voice calls in 4 indigenous languages.",
          "Grounded Pragmatism & User Empathy: Designing for the real farmer's literacy and connectivity constraints rather than tech vanity."],

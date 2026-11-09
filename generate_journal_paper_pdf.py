@@ -300,7 +300,7 @@ def build_pdf():
     # Section 2: Mathematical Formulations & Architecture
     story.append(Paragraph("2. Mathematical Foundations & System Architecture", h1_style))
     story.append(Paragraph(
-        "AgroBiometrix is structured as an integrated operating system comprising eight specialized computational suites, governed by a Two-Tier Hybrid Computing Paradigm: (1) Suite 1: Academic & Research Proposal Architect; (2) Suite 2: Advanced Biometrical & Statistical Compute Engine; (3) Suite 3: Crop Breeding & Multi-Environment Trials (MET); (4) Suite 4: Livestock Health, Biosecurity & Genetics; (5) Suite 5: Soil Chemistry, ISFM & Liming Kinetics; (6) Suite 6: Agricultural Policy, Macroeconomics & What-If Fiscal Simulator; (7) Suite 7: Socratic Viva Defense & Dissertation Coach; (8) Suite 8: Last-Mile Vernacular Radio & Voice Disseminator.",
+        "AgroBiometrix is structured as an integrated operating system comprising eight specialized computational suites, governed by a Two-Tier Hybrid Computing Paradigm: (1) Suite 1: Academic & Research Proposal Architect; (2) Suite 2: Advanced Biometrical, Data Cleaning & Statistical Compute Engine (integrating group-aware treatment mean imputation, Tukey IQR outlier winsorization, and complete Gauss-Markov ANOVA/DMRT partitioning); (3) Suite 3: Crop Breeding & Multi-Environment Trials (MET); (4) Suite 4: Livestock Health, Biosecurity & Genetics; (5) Suite 5: Soil Chemistry, ISFM & Liming Kinetics; (6) Suite 6: Agricultural Policy, Macroeconomics & What-If Fiscal Simulator; (7) Suite 7: Socratic Viva Defense & Dissertation Coach; (8) Suite 8: Last-Mile Vernacular Radio & Voice Disseminator.",
         body_style
     ))
 
